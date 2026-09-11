@@ -1,8 +1,4 @@
-def compare_hobbies(person1_hobbies, person2_hobbies):
-    return{
-        "shared": person1_hobbies & person2_hobbies,
-        "only_person1": person1_hobbies - person2_hobbies,
-        "only_person2": person2_hobbies - person1_hobbies
-    }
-    # TODO: use set operations to find shared, only_person1, and only_person2 hobbies
+def swap_tuple(pair):
+    return(pair[1], pair[0])
+    # TODO: return a new tuple with pair's two elements swapped
     pass

@@ -1,4 +1,7 @@
-def swap_tuple(pair):
-    return(pair[1], pair[0])
-    # TODO: return a new tuple with pair's two elements swapped
+def path_hits_blocked(blocked, path):
+    for block in blocked:
+        if block in path:
+            return True
+    return False 
+    # TODO: check whether any position in `path` also appears in `blocked`
     pass

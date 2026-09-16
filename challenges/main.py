@@ -1,11 +1,25 @@
-def dedupe_preserve_order(items):
-    result = []
-
-    for item in items:
-        if item not in result:
-            result.append(item)
-    return result
-    
-    # TODO: use a set to track seen values while building a new list
-    # that preserves the original order of first appearances
-    pass
+def to_roman(number):
+    values = [
+        (1000, "M"),
+        (900, "CM"),
+        (500, "D"),
+        (100, "C"),
+        (90, "XC"),
+        (50, "L"),
+        (40, "XL"),
+        (10, "X"),
+        (9, "IX"),
+        (5, "V"),
+        (4, "IV"),
+        (1, "I")
+    ]
+    result = ""
+    for value, symbol in values:
+        while number >= value:
+            result += symbol
+            number -= value
+    return result  
+    # No starter code provided — write the full function yourself.
+# Function name: to_roman
+# Parameter: number (1 to 3999)
+# Must return: the Roman numeral as a string

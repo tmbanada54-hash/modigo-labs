@@ -1,21 +1,31 @@
-def run_with_retries(results, max_attempts=3, on_failure="skip", log=None):
-    if log is None:
-        log = []
-    attempts = 0
-    for result in results:
-        if attempts >= max_attempts:
-            break
-        attempts += 1
-        if result == "success":
-            log.append("success")
-            break
-        if result == "fail":
-            if  on_failure == "log":
-                log.append("attempt failed")
-    return log    
+def to_roman(number):
+    value = [
+        (1000, "M"),
+        (900, "CM"),
+        (500, "D"),
+        (400, "CD"),
+        (100, "C"),
+        (90, "XC"),
+        (50, "L"),
+        (40, "XL"),
+        (10, "X"),
+        (9, "IX"),
+        (5, "V"),
+        (4, "IV"),
+        (1, "I")
+    ]
+    result = ""
+    remaining = number
+
+    for value, symbol in value:
+        while number >= value:
+            result += symbol
+            number -= value
+    return result        
 
 
-    # TODO: handle the mutable default argument problem correctly —
-    # do not use a mutable object like [] directly as a default value.
-    # Then simulate retrying through `results` according to the rules described.
-    pass
+    
+    # No starter code provided — write the full function yourself.
+# Function name: to_roman
+# Parameter: number (1 to 3999)
+# Must return: the Roman numeral as a string

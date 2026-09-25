@@ -1,31 +1,6 @@
-def to_roman(number):
-    value = [
-        (1000, "M"),
-        (900, "CM"),
-        (500, "D"),
-        (400, "CD"),
-        (100, "C"),
-        (90, "XC"),
-        (50, "L"),
-        (40, "XL"),
-        (10, "X"),
-        (9, "IX"),
-        (5, "V"),
-        (4, "IV"),
-        (1, "I")
-    ]
-    result = ""
-    remaining = number
-
-    for value, symbol in value:
-        while number >= value:
-            result += symbol
-            number -= value
-    return result        
-
-
-    
-    # No starter code provided — write the full function yourself.
-# Function name: to_roman
-# Parameter: number (1 to 3999)
-# Must return: the Roman numeral as a string
+def find_phone_number(contacts, name):
+    contact_book = dict(contacts)
+    return contact_book.get(name, "Not found")
+    # TODO: build a dict from `contacts` (list of (name, phone) tuples),
+    # then return the phone number for `name`, or "Not found"
+    pass
